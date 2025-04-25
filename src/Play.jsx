@@ -8,11 +8,11 @@ import Scene1 from "./scene1";
 import { XR, createXRStore} from '@react-three/xr'
 
 
-
+const store = createXRStore()
 export default function Play() {
     const [bgImg , setBgImg] = useState(null)
     const [scene, setScene] = useState(2)
-    const store = createXRStore()
+    
     console.log(XRHand)
 
     const handleTele = () => {

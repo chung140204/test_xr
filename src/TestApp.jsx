@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const store = createXRStore()
 
-function Test() {
+function TestApp() {
   const [red, setRed] = useState(false)
   return (
     <>
@@ -21,4 +21,4 @@ function Test() {
   )
 }
 
-export default Test;
+export default TestApp;
