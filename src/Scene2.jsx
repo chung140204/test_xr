@@ -8,7 +8,7 @@ import axios from 'axios'
 
 function Scene2() {
     const grasstexture = useLoader(THREE.TextureLoader , 'grass.jpg')
-    const texture = useLoader(THREE.TextureLoader , '13.jpg')
+    const texture = useLoader(THREE.TextureLoader , 'room2.jpg')
     const objRef = useRef()
     const cameraRef = useRef()
 
@@ -112,6 +112,7 @@ function Scene2() {
         <div onClick={handleSend} style={{ padding: "15px", background: "white", borderRadius: "8px", fontSize:"24px" ,color:"black"}}>Send</div>
       </Html>
       <CameraControls ref={cameraRef}/>
+      {/* <OrbitControls makeDefault /> */}
     </group>
   )
 }
