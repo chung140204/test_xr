@@ -9,7 +9,7 @@ const SPEED = 20 ;
 const direction = new THREE.Vector3() ;
 const frontVector = new THREE.Vector3() ;
 const sideVector = new THREE.Vector3() ;
-const rotation = new THREE.Vector3() ;
+// const rotation = new THREE.Vector3() ;
 
 export default function PlayerControls({ lerp = THREE.MathUtils.lerp }) {
     const ref = useRef();

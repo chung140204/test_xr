@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import {  useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PointerLockControls } from "@react-three/drei";
 import * as THREE from "three";

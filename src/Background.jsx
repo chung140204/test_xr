@@ -2,7 +2,7 @@ import { Box, GizmoHelper, GizmoViewport, Sphere, Text } from '@react-three/drei
 import { useLoader } from '@react-three/fiber'
 import React, { useEffect, useState } from 'react'
 import * as THREE from 'three'
-import { useControls } from 'leva'
+// import { useControls } from 'leva'
 
 function Background( {bgImg} ) {
     //const {number} = useControls({number: {value: 0 , min: 0, max: 20 , step :1}, myBarColor: { r: 200, b: 125, g: 106, a: 0.4 },})
