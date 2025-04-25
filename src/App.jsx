@@ -12,8 +12,8 @@ function App() {
     <>
       {/* <Demo></Demo> */}
       {/* <Scene></Scene> */}
-      {/* <Play></Play> */}
-      <TestApp></TestApp>
+      <Play></Play>
+      {/* <TestApp></TestApp> */}
     </>
   )
 }
