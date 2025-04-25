@@ -5,13 +5,14 @@ import Scene from './TestControls'
 import Play from './Play'
 import Test from './test'
 
+
 function App() {
   return (
     <>
       {/* <Demo></Demo> */}
       {/* <Scene></Scene> */}
-      {/* <Play></Play> */}
-      <Test/>
+      <Play></Play>
+      {/* <Test/> */}
     </>
   )
 }
