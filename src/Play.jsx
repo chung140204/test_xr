@@ -47,7 +47,7 @@ export default function Play() {
                         {/* { scene === 1 ? <Scene1 bgImg={bgImg}></Scene1> : <Scene2></Scene2> } */}
                         <Scene1 bgImg={bgImg}></Scene1>
                 
-                        <Box onPointerDown={handleTele} position={[-10, 10, 10]} args={[3, 3, 3]}>
+                        <Box pointerEventsType={handleTele} position={[-10, 10, 10]} args={[3, 3, 3]}>
                             <meshLambertMaterial attach="material" color="red" />
                         </Box>
                         {/* <Controllers /> */}

@@ -3,7 +3,8 @@ import './App.css'
 import Demo from './Demo'
 import Scene from './TestControls'
 import Play from './Play'
-// import Test from './test'
+import Test from './Test'
+
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       {/* <Demo></Demo> */}
       {/* <Scene></Scene> */}
       <Play></Play>
-      {/* <Test/> */}
+      {/* <Test /> */}
     </>
   )
 }
