@@ -7,6 +7,7 @@ import Scene2 from "./Scene2";
 import Scene1 from "./scene1";
 import { XR, createXRStore } from "@react-three/xr";
 import VRController from "./VRController";
+import VRMovementController from "./VRMoveController";
 
 const store = createXRStore();
 function CameraWrapper() {
@@ -56,6 +57,7 @@ export default function Play() {
 
                     {/* <OrbitControls makeDefault /> */}
                     <CameraWrapper />
+                    <VRMovementController/>
                     
                 </XR>
             </Canvas>
