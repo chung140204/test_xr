@@ -11,7 +11,7 @@ const store = createXRStore();
 
 export default function Play() {
     const [bgImg, setBgImg] = useState(null);
-    const [scene, setScene] = useState(2);
+    const [scene, setScene] = useState(1);
 
     const handleTele = () => {
         if (scene === 1) {
