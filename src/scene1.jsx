@@ -36,6 +36,7 @@ function Scene1({ bgImg }) {
         <Ground />
         <CubeContent />
       </Physics> */}
+    
       <Background bgImg={bgImg} />
       {/* <PivotObj /> */}
     </group>

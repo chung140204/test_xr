@@ -50,7 +50,8 @@ export default function Play() {
                         <meshLambertMaterial attach="material" color="blue" />
                     </mesh>
 
-                    <OrbitControls makeDefault />
+                    {/* <OrbitControls makeDefault /> */}
+                    <Controllers />
                 </XR>
             </Canvas>
             <SelectBg setBgImg={setBgImg} />
