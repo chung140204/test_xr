@@ -1,34 +1,28 @@
+import { useFrame, useThree } from "@react-three/fiber";
 import { useXR } from "@react-three/xr";
-import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
-export default function VRController({ camera }) {
-  const { controllers = [] } = useXR(); // Gán giá trị mặc định là mảng rỗng
-  const zoomSpeed = useRef(0.1); // Tốc độ zoom
+export default function VRZoomController() {
+  const { camera } = useThree(); // Lấy camera từ ngữ cảnh
+  const { controllers = [] } = useXR();
+  const zoomSpeed = useRef(0.5); // Tốc độ zoom
+  const minFov = 30;
+  const maxFov = 90;
+  const deadzone = 0.1; // Độ nhạy joystick
 
-  // Lắng nghe joystick và nút bấm
   useFrame(() => {
-    if (controllers.length > 0) { // Kiểm tra controllers có phần tử
-      controllers.forEach((controller) => {
-        if (controller.inputSource.gamepad) {
-          const gamepad = controller.inputSource.gamepad;
+    controllers.forEach((controller) => {
+      const gamepad = controller.inputSource?.gamepad;
+      if (!gamepad || gamepad.axes.length < 2) return;
 
-          // Truy cập joystick
-          const axes = gamepad.axes; // Trục joystick
-          const zoomDirection = axes[1]; // Trục Y của joystick
-
-          // Zoom in/out bằng joystick
-          camera.position.z += zoomDirection * zoomSpeed.current;
-          camera.position.z = Math.max(1, Math.min(camera.position.z, 10)); // Giới hạn khoảng cách
-
-          // Xử lý nút bấm (ví dụ: nút đầu tiên)
-          if (gamepad.buttons[0].pressed) {
-            console.log("Button 0 pressed!");
-          }
-        }
-      });
-    }
+      const zoomInput = gamepad.axes[1]; // Trục Y joystick
+      if (Math.abs(zoomInput) > deadzone) {
+        camera.fov += zoomInput * zoomSpeed.current;
+        camera.fov = Math.max(minFov, Math.min(maxFov, camera.fov));
+        camera.updateProjectionMatrix(); // Cập nhật camera sau khi đổi fov
+      }
+    });
   });
 
-  return null; // Thành phần này không cần render gì
+  return null;
 }

@@ -1,4 +1,4 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { PointerLockControls, KeyboardControls, OrbitControls } from "@react-three/drei";
 
 import SelectBg from "./SelectBg";
@@ -9,7 +9,10 @@ import { XR, createXRStore } from "@react-three/xr";
 import VRController from "./VRController";
 
 const store = createXRStore();
-
+function CameraWrapper() {
+    const { camera } = useThree(); // Lấy camera từ ngữ cảnh
+    return <VRController camera={camera} />;
+  }
 export default function Play() {
     const [bgImg, setBgImg] = useState(null);
     const [scene, setScene] = useState(1);
@@ -52,10 +55,12 @@ export default function Play() {
                     </mesh>
 
                     {/* <OrbitControls makeDefault /> */}
-                    <VRController/>
+                    <CameraWrapper />
+                    
                 </XR>
             </Canvas>
             <SelectBg setBgImg={setBgImg} />
+            
         </KeyboardControls>
     );
 }
