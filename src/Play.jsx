@@ -6,6 +6,7 @@ import { useState } from "react";
 import Scene2 from "./Scene2";
 import Scene1 from "./scene1";
 import { XR, createXRStore } from "@react-three/xr";
+import VRController from "./VRController";
 
 const store = createXRStore();
 
@@ -51,7 +52,7 @@ export default function Play() {
                     </mesh>
 
                     {/* <OrbitControls makeDefault /> */}
-                    <Controllers />
+                    <VRController/>
                 </XR>
             </Canvas>
             <SelectBg setBgImg={setBgImg} />
